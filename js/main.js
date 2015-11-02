@@ -60,60 +60,6 @@ $(function() {
 	var whiteMat = new THREE.LineBasicMaterial({
 		color: 0xffffff
 	});
-
-	var lineGeom = new THREE.Geometry();
-	lineGeom.vertices.push(
-		new THREE.Vector3( 0, 0, 0 ),
-		new THREE.Vector3( 0, 0, 30 )	
-	);
-	lineGeom.verticesNeedUpdate = true;
-	var line = new THREE.Line( lineGeom, whiteMat );
-	
-	scene.add( line );
-	
-	
-	
-	
-	var blueMat = new THREE.LineBasicMaterial({
-		color: 0x0000ff
-	});
-
-	var xGeom = new THREE.Geometry();
-	xGeom.vertices.push(
-		new THREE.Vector3( -100, 0, 0 ),
-		new THREE.Vector3( 100, 0, 0 )	
-	);
-
-	var xAxis = new THREE.Line( xGeom, blueMat );
-	//scene.add( xAxis );
-	
-	// -------- Y
-	var matGreen = new THREE.LineBasicMaterial({
-		color: 0x00ff00
-	});	
-	
-	var yGeom = new THREE.Geometry();
-	yGeom.vertices.push(
-		new THREE.Vector3( 0, -10, 0 ),
-		new THREE.Vector3( 0, 10, 0 )	
-	);
-	var yAxis = new THREE.Line( yGeom, matGreen );
-	//scene.add( yAxis );
-	
-	// --------- Z
-	var zGeom = new THREE.Geometry();
-	var matRed = new THREE.LineBasicMaterial({
-		color: 0xff0000
-	});
-	zGeom.vertices.push(
-		new THREE.Vector3( 0, 0, -100 ),
-		new THREE.Vector3( 0, 0, 100 )	
-	);
-	
-	
-	var zAxys = new THREE.Line( zGeom, matRed );
-	//scene.add(zAxys);
-	
 	
 	
 	//LIGHT
