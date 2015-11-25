@@ -1,4 +1,4 @@
-var orbitControls;
+var orbitControls, line;
 
 $(function() {
 	
@@ -55,65 +55,7 @@ $(function() {
 	orbitControls = new THREE.OrbitControls(camera);
 	
 	
-	displayNodes();
-	
-	var whiteMat = new THREE.LineBasicMaterial({
-		color: 0xffffff
-	});
-
-	var lineGeom = new THREE.Geometry();
-	lineGeom.vertices.push(
-		new THREE.Vector3( 0, 0, 0 ),
-		new THREE.Vector3( 0, 0, 30 )	
-	);
-	lineGeom.verticesNeedUpdate = true;
-	var line = new THREE.Line( lineGeom, whiteMat );
-	
-	scene.add( line );
-	
-	
-	
-	
-	var blueMat = new THREE.LineBasicMaterial({
-		color: 0x0000ff
-	});
-
-	var xGeom = new THREE.Geometry();
-	xGeom.vertices.push(
-		new THREE.Vector3( -100, 0, 0 ),
-		new THREE.Vector3( 100, 0, 0 )	
-	);
-
-	var xAxis = new THREE.Line( xGeom, blueMat );
-	//scene.add( xAxis );
-	
-	// -------- Y
-	var matGreen = new THREE.LineBasicMaterial({
-		color: 0x00ff00
-	});	
-	
-	var yGeom = new THREE.Geometry();
-	yGeom.vertices.push(
-		new THREE.Vector3( 0, -10, 0 ),
-		new THREE.Vector3( 0, 10, 0 )	
-	);
-	var yAxis = new THREE.Line( yGeom, matGreen );
-	//scene.add( yAxis );
-	
-	// --------- Z
-	var zGeom = new THREE.Geometry();
-	var matRed = new THREE.LineBasicMaterial({
-		color: 0xff0000
-	});
-	zGeom.vertices.push(
-		new THREE.Vector3( 0, 0, -100 ),
-		new THREE.Vector3( 0, 0, 100 )	
-	);
-	
-	
-	var zAxys = new THREE.Line( zGeom, matRed );
-	//scene.add(zAxys);
-	
+	displayNodes();		
 	
 	
 	//LIGHT
@@ -153,14 +95,16 @@ $(function() {
 				new THREE.Vector3( 0, 0, 0 ),
 				new THREE.Vector3( 0, 0, 30 )	
 			);
-			var pinLine = new THREE.Line( lineGeom, whiteMat );
+			line = new THREE.Line( lineGeom, whiteMat );
 			
-			pinLine.geometry.vertices[1].x  = r * Math.cos(lat)*Math.cos(lon);
-			pinLine.geometry.vertices[1].y  = r * Math.sin(lat);
-			pinLine.geometry.vertices[1].z  = r * Math.cos(lat)*Math.sin(lon);
-			scene.add( pinLine );
+			line.geometry.vertices[1].x  = r * Math.cos(lat)*Math.cos(lon);
+			line.geometry.vertices[1].y  = r * Math.sin(lat);
+			line.geometry.vertices[1].z  = r * Math.cos(lat)*Math.sin(lon);
+			scene.add( line );
 			
-		}		
+		}	
+                
+            
 	}
 	
 	function renderScene(){	
