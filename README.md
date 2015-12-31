@@ -6,6 +6,6 @@ Bitcoin nodes 3D global representation with THREE.js
 ##Setup
 To avoid the cross domain policy issues that prevent the application to be seen in local you do not need to run it on a local server like node.js. Perhaps the quickest solution is to do use Firefox and do the following:
 
-- on Firefox, enter "about:config" in the URL 
+- on Firefox, enter "about:config" as URL 
 - set the flag "security.fileuri.strict_origin_policy" to false
 - enjoy!
